@@ -73,8 +73,8 @@
 		sourceEngWord = findTheWordWithMaxEntry(engWords);
 		console.log('Максимум(внеш):' + sourceEngWord.value + ' ' + sourceEngWord.maxEntires);
 		console.log ('wordDetectingProblem = ', sourceEngWord.wordDetectingProblem);
-
-		resultTxt = resultTxt.replace(/[a-zA-Z]+[,|']*\s*\n*/gm, '$').replace(/\s\$+/gm, ', ').replace(/,\s(?=;)/gm,'').replace(/^;/,'').replace(/\,\s$/g,'');
+		
+		resultTxt = resultTxt.replace(/[a-z- ]+(,\s|$)/img,'$').replace(/\s\$+/ig,',').replace(/^;/,'').replace(/,\s;/ig, ';').replace(/,$/,'');
 
 		// выводим текст в html
 		
